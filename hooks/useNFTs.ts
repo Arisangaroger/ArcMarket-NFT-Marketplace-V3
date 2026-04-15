@@ -12,7 +12,9 @@ export function useNFTs() {
 
   const fetchNFTs = useCallback(async(provider:ethers.Provider)=>{
     setIsLoading(true);
+
     const contract = getContract(provider);
+    
     const max = CONTRACT_ADDRESSES.maxSupply;
     setNfts(Array.from({length:max},(_,i)=>({tokenId:i+1,owner:null,tokenUri:null,metadata:null,imageUrl:null,listing:null,isLoadingMeta:true})));
     const [ownerRes,uriRes] = await Promise.all([
