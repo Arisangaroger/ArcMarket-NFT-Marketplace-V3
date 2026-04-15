@@ -103,7 +103,10 @@ export function useMarketplace(signer:ethers.JsonRpcSigner|null, chainId:number|
   // ── Cancel ──────────────────────────────────────────────────────────────────
   const cancelListing = useCallback(async(tokenId:number):Promise<boolean>=>{
     if (!signer) return false;
+
     reset();
+
+    
     try {
       setTx({status:"pending",hash:null,error:null,action:"cancel"});
       const c=getMarket(signer);
