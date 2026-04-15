@@ -5,9 +5,11 @@ import { Pencil, Check, X, Loader2 } from "lucide-react";
 interface Props {
   currentPrice: string;
   tokenId: number;
-  isBusy: boolean;
+  isBusy: boolean;]
   onUpdate: (tokenId: number, newPrice: string) => Promise<boolean>;
 }
+
+
 
 export default function PriceEditor({ currentPrice, tokenId, isBusy, onUpdate }: Props) {
   const [editing, setEditing] = useState(false);
