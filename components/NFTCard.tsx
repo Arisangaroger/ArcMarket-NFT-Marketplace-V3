@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ShoppingBag, Eye, Tag, X, ImageOff, Percent } from "lucide-react";
 import type { NFTItem } from "@/types";
 import { truncateAddr } from "@/lib/utils";
+
 import { Skeleton } from "./Loader";
 
 interface Props {
@@ -16,6 +17,7 @@ interface Props {
   onCancel: (nft: NFTItem) => void;
   isBusy?: boolean;
   style?: React.CSSProperties;
+  
 }
 
 export default function NFTCard({ nft, connectedAddress, feePercent, onBuy, onList, onCancel, isBusy = false, style }: Props) {
