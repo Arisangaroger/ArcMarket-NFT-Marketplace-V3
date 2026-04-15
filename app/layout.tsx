@@ -16,10 +16,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
+
         <div className="aurora-bg" />
+
         <div className="relative z-10 min-h-screen flex flex-col">
           {children}
         </div>
+        
         <Toaster position="top-right" toastOptions={{
           duration: 5000,
           style: {
